@@ -1,0 +1,38 @@
+name: Integração Contínua (CI)
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    branches:
+      - main
+      - development
+
+jobs:
+  verificacao:
+    name: Verificação e Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Conferir sincronia dos agentes e MCP
+        run: npm run ai:check
+
+      - name: Auditoria de layout, textos e pixel art
+        run: npm run audit
+
+      - name: Build de produção estático
+        run: npm run build
