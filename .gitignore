@@ -11,3 +11,4 @@ scripts/assets/.cache/
 .claude/worktrees/
 __pycache__/
 *.tgz
+!public/downloads/*.tgz
