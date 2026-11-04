@@ -31,6 +31,9 @@ jobs:
       - name: Conferir sincronia dos agentes e MCP
         run: npm run ai:check
 
+      - name: Validar integridade da documentacao da Wiki
+        run: npm run wiki:check
+
       - name: Auditoria de layout, textos e pixel art
         run: npm run audit
 

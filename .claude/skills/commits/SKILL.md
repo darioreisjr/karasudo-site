@@ -70,9 +70,9 @@ Commit é local. O push só acontece quando o autor pedir. Reescrever commits j�
 ### Antes de todo push
 
 1. Veja o que vai subir: `git log origin/development..HEAD --oneline` e `git diff origin/development..HEAD --stat`.
-2. **README:** leia o `README.md` e compare com as mudanças. Atualize se mudou o que ele afirma (comandos, estrutura, tecnologias, como rodar).
+2. **README e Wiki:** leia o `README.md` e a pasta `wiki/` e compare com as mudanças. Atualize obrigatoriamente se mudou o que eles afirmam (comandos, rotas, estrutura, deploy) e valide com `npm run wiki:check`.
 3. **Kit de agentes:** se o diff tocou `AGENTS.md` (regras gerais), `.agents/skills/`, `docs/ai-setup/` ou `scripts/ai-sync.mjs` e `scripts/ai-hooks/`, veja se a mudança serve a qualquer projeto e, se servir, leve a forma genérica para a cópia mestra do kit (`darioreisjr/portfolio_2027`, pasta `docs/ai-setup/kit`, seção "Manter o kit atualizado" do `GUIA.md`).
-4. No relato do push, diga em uma linha o que mudou no README e no kit, ou que já estavam em dia.
+4. No relato do push, diga em uma linha o que mudou no README, na Wiki e no kit, ou que já estavam em dia.
 
 ## Branches e pull request
 

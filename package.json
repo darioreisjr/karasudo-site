@@ -9,6 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "audit": "node scripts/audit-layout.mjs",
+    "wiki:check": "node scripts/wiki-sync.mjs --check",
+    "wiki:sync": "node scripts/wiki-sync.mjs --push",
     "ai:sync": "node scripts/ai-sync.mjs",
     "ai:check": "node scripts/ai-sync.mjs --check"
   },
