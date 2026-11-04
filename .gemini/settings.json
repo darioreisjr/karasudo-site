@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Authorization": "Bearer $CONTEXT7_API_KEY"
+      }
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "X-MCP-Toolsets": "repos,issues,pull_requests,actions",
+        "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@0.0.83"
+      ]
+    }
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "write_file|replace",
+        "hooks": [
+          {
+            "name": "bloquear-gerados",
+            "type": "command",
+            "command": "node \"$GEMINI_PROJECT_DIR/scripts/ai-hooks/guard-generated.mjs\"",
+            "timeout": 15000,
+            "description": "Recusa edição em arquivo gerado e aponta a fonte"
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "write_file|replace",
+        "hooks": [
+          {
+            "name": "formatar-editados",
+            "type": "command",
+            "command": "node \"$GEMINI_PROJECT_DIR/scripts/ai-hooks/format-edited.mjs\"",
+            "timeout": 60000,
+            "description": "Roda o formatador nos arquivos que o agente alterou"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+docker-compose.override.yml
+scripts/assets/.cache/
+
+# Configurações locais do Claude Code (as do projeto, geradas por scripts/ai-sync.mjs, entram no repositório)
+.claude/settings.local.json
+.claude/worktrees/
+__pycache__/
+*.tgz

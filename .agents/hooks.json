@@ -1,0 +1,28 @@
+{
+  "ai-sync": {
+    "PreToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content|create_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/ai-hooks/guard-generated.mjs",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content|create_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/ai-hooks/format-edited.mjs",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

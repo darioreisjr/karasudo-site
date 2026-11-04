@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/scripts/ai-hooks/guard-generated.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Recusa edição em arquivo gerado e aponta a fonte"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/scripts/ai-hooks/format-edited.mjs\"",
+            "timeout": 60,
+            "statusMessage": "Roda o formatador nos arquivos que o agente alterou"
+          }
+        ]
+      }
+    ]
+  }
+}

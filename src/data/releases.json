@@ -1,0 +1,248 @@
+[
+  {
+    "version": "0.3.1",
+    "date": "2026-11-02",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Segurança",
+        "items": [
+          "**Atualização da Imagem Docker Base:** atualizado o digest seguro (SHA256) do `node:24-alpine` no Dockerfile para incluir as últimas correções de segurança e manutenção do Node e do Alpine Linux."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "date": "2026-11-02",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Academia do Escritório e Sala de Servidores:** novas salas temáticas integradas ao núcleo comum do prédio (`CORE_COLS = 3`). A Academia conta com piso emborrachado antiderrapante, divisórias de vidro, esteiras ergométricas, banco de supino, bicicletas de exercício, suporte de halteres e bebedouro esportivo com rotinas de descanso ativo e animações procedurais dos personagens durante pausas (`idle`). A Sala de Servidores conta com piso técnico elevado, racks de servidores com LEDs piscantes que os agentes inspecionam durante tarefas em segundo plano (`status shell`) e console com terminais de monitoramento.",
+          "**Estacionamento e Carros dos Agentes:** baias de estacionamento delimitadas na área sul com placa de sinalização de trânsito em pixel art, vinculando veículos próprios estacionados para cada agente ativo no escritório com cores e estilos únicos baseados no identificador de sessão.",
+          "**Documentação Oficial na GitHub Wiki e Automação Contínua:** documentação completa e estruturada da Wiki em `https://github.com/darioreisjr/karasudo/wiki` baseada na pasta canônica `wiki/`, incluindo visão geral (`Home.md`), arquitetura (`Arquitetura-Geral.md`), fontes de agentes (`Fontes-de-Agentes-e-Integracoes.md`), ciclo de vida e emoções (`Ciclo-de-Vida-e-Status.md`), clima e atmosfera (`Clima-Dinamico-e-Ambiente.md`), terminal e permissões (`Terminal-Mensagens-e-Permissoes.md`), guia de desenvolvimento (`Guia-de-Desenvolvimento.md`), menu lateral (`_Sidebar.md`) e rodapé (`_Footer.md`), com diagramas de fluxo nativos em Mermaid. Inclui script de sincronização idempotente (`npm run wiki:sync` e `npm run wiki:check`), workflow de CI no GitHub Actions (`wiki-sync.yml`), subagente `wiki-maintainer` e skill `wiki`."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.2.1",
+    "date": "2026-10-30",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Atmosfera Externa Expandida do Clima:** o clima dinâmico agora atua visualmente em toda a área exterior ao redor do prédio (jardim e árvores ao norte, rua e calçadas ao sul e pátios abertos). Inclui chuva contínua cobrindo o bosque e gramado externo com micro-respingos (_splashes_) no chão, asfalto da rua e calçadas molhadas com brilho especular e reflexos, além de névoa atmosférica suave fundindo o céu das janelas com a fachada.",
+          "**Física Climática nos Carros e Vegetação Externa:** os veículos em circulação na rua agora projetam reflexos espelhados no pavimento encharcado, esteira de água espirrada pelas rodas (_tire spray_) e faróis dianteiros refletidos no asfalto molhado. Ao norte e nos canteiros, as copas das árvores e arbustos balançam organicamente com a força do vento procedural em chuva e tempestade, mantendo os troncos fixos no solo e terra úmida sob a folhagem."
+        ]
+      },
+      {
+        "title": "Modificado",
+        "items": [
+          "**Padronização dos Controles de Configurações com `<select>`:** todos os seletores com múltiplas opções do modal de Configurações foram unificados para o padrão de menu de seleção suspenso estilizado (`<select class=\"ui-select\">`). Abrange: Tema do escritório, Clima e atmosfera, Estilo das salas, Balões de atividade, Movimento pelo escritório, Ciclo dia/noite, Mascote do escritório e predefinições sonoras em Tocar (\"Todos os sons\", \"Avisos e escritório\", \"Apenas avisos\", \"Nenhum\")."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "date": "2026-10-30",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Clima Dinâmico e Atmosfera Externa (Janelas & Fachada):** simulação atmosférica viva e integrada ao ciclo dia/noite com três estados climáticos (`clear`, `rain`, `storm`), resolução determinística por hora do dia e controle manual nas Configurações de Aparência. Inclui céu nublado com transição suave (`overcast`), chuva com pingos caindo e escorrendo pelo vidro das janelas, tempestade com trovões e relâmpagos sincronizados (iluminando as janelas e aplicando clarão na cena) e partículas de chuva caindo na área externa e calçadas do edifício.",
+          "**Expressões e Emoções dos Agentes:** reações visuais animadas sobre os personagens no escritório para refletir a atividade em andamento. Inclui a lâmpada de \"Eureka/Ideia\" (`idea`) com animação de salto quando o agente conclui o raciocínio (`think`) e parte para a execução de ferramentas (`run`, `edit`, `write`), gota de suor (`sweat`) tremulando em erros de comando ou ferramentas com falha, ponto de interrogação (`question`) flutuando quando o agente aguarda perguntas interativas do usuário (`ask`), e animação de café na copa.",
+          "**Mascote do Escritório (Gatinho em Pixel Art):** um companheiro felino que circula autonomamente pelos corredores e recepção do prédio. O mascote conta com poses exclusivas de caminhada com passos alternados (`walk`), observação com rabo balançando e piscadela (`sit`), espreguiçamento matinal (`stretch`) e sonecas enroladinhas com respiração suave (`sleep`). Possui interatividade direta com o usuário: ao passar o cursor ou clicar no pet, ele dá um pulinho alegre e solta um balão de coração (`heart`). Disponível nas variantes gatinho tigrado/laranja e tuxedo, com opção de ativação nas Configurações do Escritório.",
+          "**Temas Estilizados para as Salas de Projeto:** 4 estilos visuais e arquiteturais completos para personalizar o ambiente de trabalho (`classic`, `cyberpunk`, `nordic` e `midnight`). Cada estilo conta com paletas de piso exclusivas (carpetes em tons profundos, pisos vinílicos, madeira clara e linho texturizado), paredes e frisos correspondentes, acentos vibrantes de alto contraste e mobiliário coordenado. As alterações são aplicadas instantaneamente às salas ativas sem necessidade de recarregar a página e persistidas nas preferências do usuário.",
+          "**Comemorações de Release e Conclusão de Entrega (Festa com Pizza e Balões):** celebrações comemorativas no escritório disparadas em eventos de release e conclusão/merge de Pull Requests. As salas em festa recebem cachos de balões multicoloridos flutuantes em pixel art nos cantos superiores com leve oscilação orgânica, e a recepção ganha uma caixa de pizza aberta com fatias quentinhas de queijo derretido, pepperoni e vapor saindo. Os agentes comemoram com pulinhos de celebração, chuva de confetes, estrelas e balões temáticos com alternância entre `🎉` e `🍕`."
+        ]
+      },
+      {
+        "title": "Modificado",
+        "items": [
+          "**Seleção de Idioma com Menu Suspenso (`<select>`):** o controle de idioma da interface no popover de configurações foi substituído por um `<select class=\"ui-select\">` nativo estilizado no padrão visual escuro com seta pixel art, liberando espaço horizontal e permitindo escalabilidade para novos idiomas."
+        ]
+      },
+      {
+        "title": "Corrigido",
+        "items": [
+          "**Espaçamento e Respiro dos Botões de Configuração:** largura do popover de configurações ampliada para 390px e refinamento de padding, gaps e tipografia nos segmented controls e chips de som (`Tocar`), eliminando aperto visual e evitando textos colados nas bordas dos botões."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.8",
+    "date": "2026-10-29",
+    "latest": true,
+    "downloads": {
+      "tgz": "/downloads/karasudo-0.1.8.tgz",
+      "zip": "/downloads/karasudo-0.1.8.zip"
+    },
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Exportação da Conversa do Terminal em Markdown:** novo botão de ação com ícone de cópia em pixel art no cabeçalho do Terminal (`T`) que gera a transcrição completa ou filtrada da conversa da sessão formatada em Markdown estruturado (com metadados do agente, sala/projeto, papel, ferramenta, blocos de código para comandos e saídas de ferramentas recolhíveis em `<details>`), com cópia para a área de transferência (`copyToClipboard`) e feedback acessível visual e sonoro.",
+          "**Janela Flutuante Always-on-Top (Picture-in-Picture):** suporte nativo à Document Picture-in-Picture API (`window.documentPictureInPicture`). O novo botão com ícone PiP na barra de ferramentas superior abre uma mini-janela flutuante mantida sempre visível no topo sobre qualquer editor ou terminal em tela cheia, destacando agentes que demandam atenção imediata (pedidos de permissão e perguntas interativas), tarefas em andamento e estado do escritório, com clique direto para focar e abrir a conversa do agente no escritório principal."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.7",
+    "date": "2026-10-29",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Filtros Rápidos no Feed de Atividades:** seletor segmentado acessível (`radiogroup`) no topo do feed (`]`) com filtros rápidos para \"Todos\", \"Só erros\" (`errors`), \"Aguardando\" (`waits`) e \"GitHub\" (`github`), com navegação acessível por teclado (setas ← / →), contagem de eventos filtrados e mensagens de estado vazio contextuais.",
+          "**Filtro de Erros no Terminal:** nova opção \"Só erros\" no seletor segmentado do terminal de agentes, permitindo isolar instantaneamente falhas em ferramentas, saídas com status de erro e avisos críticos do sistema."
+        ]
+      },
+      {
+        "title": "Corrigido",
+        "items": [
+          "**Detecção de Tags Remotas na Esteira de Release:** o script de release (`scripts/release.ts`) agora busca tags remotas de forma segura (`git fetch --tags origin`) e verifica a existência da tag na origin remota (`git ls-remote`) mesmo em ambiente de CI. Isso impede que a action de Release tente recriar e fazer push de tags existentes quando disparada com `--if-needed`."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.6",
+    "date": "2026-10-29",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Diagnóstico Aprofundado para Container Docker Local:** inspeção e monitoramento automático de recursos em containers Docker locais via cgroups v1 e v2 (`/sys/fs/cgroup`). O modal de Diagnóstico do Sistema agora exibe o consumo de memória do container com limite configurado (`memory.current` / `memory.max`), integridade de gravação do volume de dados persistente (`/data`) e montagem do volume de histórico de uso dos agentes (`/usage`).",
+          "**Instruções de Docker no README:** documentação de execução isolada local com `npm run docker:up`, `docker:logs` e `docker:down`."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.5",
+    "date": "2026-10-29",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Suporte a PWA Completo (Progressive Web App):** instalação nativa do Karasudo em tela cheia no desktop (Chrome, Edge, Brave) e em dispositivos móveis (Android e iOS). Inclui manifesto W3C enriquecido (`manifest.webmanifest`) com suporte a ícones maskable, atalhos rápidos (\"Meu Dia\" e \"Feed\"), Service Worker leve (`sw.js`) com política de cache estático sem interferência nas conexões em tempo real (`/sse`, `/api/*`, `/pty/*`), detecção de modo autônomo (_standalone_), botão acessível \"Instalar aplicativo\" em Configurações e orientações contextuais para Safari no iOS."
+        ]
+      },
+      {
+        "title": "Corrigido",
+        "items": [
+          "**Ações da Seção \"Sobre\" em Configurações:** agrupamento semântico dos botões e links (\"Código no GitHub\" e \"Diagnóstico do sistema\") em container flexível (`ui-about__actions`), eliminando a sobreposição e fusão dos textos e sublinhados adjacentes, com espaçamento e respiro adequados no rodapé do painel."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.4",
+    "date": "2026-10-28",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Exportação do \"Meu Dia\" em Markdown:** novo botão com ícone de cópia em pixel art no cabeçalho do painel Meu Dia (`DayPanel`) que copia para a área de transferência o resumo consolidado das atividades do dia (tempo trabalhado, tempo de espera humana, lista de projetos trabalhados, sessões, subagentes, tokens consumidos e custos) formatado em Markdown limpo, pronto para colar em canais de standup/daily (Slack, Discord, Teams) ou anotações pessoais."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.3",
+    "date": "2026-10-28",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Painel de Diagnóstico do Escritório Local:** novo endpoint `GET /api/diagnostics` e modal acessível em pixel art (em Configurações › Sobre › Diagnóstico do sistema) que exibe o uso de recursos locais (RAM RSS e heap alocado/usado pelo processo, clientes SSE conectados), tempo em execução do escritório (uptime), ambiente (container Docker local ou máquina host Node.js) e estado das fontes de agentes locais configuradas."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.2",
+    "date": "2026-10-28",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Otimizações e Performance",
+        "items": [
+          "**Modularização de Chunks (Code Splitting) no Vite:** divisão granular do bundle em `engine`, `terminal`, `timelapse`, `audio` e `daystats`. O arquivo principal `app.js` reduziu de **706.6 kB para 221 kB (-68.7% de payload inicial)**, eliminando por completo o aviso de chunks > 500 kB do Vite e acelerando sensivelmente o carregamento inicial.",
+          "**Carregamento Sob Demanda:** o painel Meu Dia (`daystats.ts`) e o terminal PTY agora são baixados apenas quando o usuário aciona suas respectivas aberturas."
+        ]
+      },
+      {
+        "title": "Resiliência",
+        "items": [
+          "**Reconexão Pró-ativa por Visibilidade e Foco:** o `OfficeStore` agora reconecta na hora ao voltar à aba do Karasudo (`visibilitychange` e `focus`), sem deixar o usuário esperando até 30 segundos após suspensão da máquina ou reinício do servidor.",
+          "**Jitter no Backoff do SSE:** aplicada variação aleatória de ±15% no cálculo do atraso de reconexão para evitar sobrecarga simultânea de múltiplas abas (_thundering herd_)."
+        ]
+      },
+      {
+        "title": "Acessibilidade (WCAG 2.2 AA)",
+        "items": [
+          "**Focus Trap e Restauração de Foco:** diálogos e popovers (`HelpDialog`, `SettingsPopover`, `HistoryPopover` e `Deliveries`) agora mantêm a navegação por teclado (`Tab` e `Shift+Tab`) contida em seu interior e devolvem automaticamente o foco ao botão de origem ao fechar."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.1",
+    "date": "2026-10-28",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Adicionado",
+        "items": [
+          "**Release automática no GitHub Actions:** workflow que publica a release oficial e cria a tag automaticamente a cada push na branch principal com nova versão.",
+          "**Suporte completo a Gemini CLI e Antigravity no Docker:** o script `npm run docker:up` agora descobre e monta automaticamente as sessões do Gemini CLI (`/gemini/<conta>/tmp`) e do Antigravity (`/antigravity/{brain,annotations}`) no container, como somente leitura e sem expor credenciais, com repasse de metadados em `KARASUDO_ACCOUNTS`.",
+          "**Captura de tela no README:** adicionada demonstração visual do escritório em pixel art com a marca nova, mostrando salas, personagens, balões de status, notificações e feed de atividades ao vivo."
+        ]
+      },
+      {
+        "title": "Correção",
+        "items": [
+          "**Testes e caminhos no Windows:** suporte cross-platform completo no tratamento de caminhos com letras de unidade, separadores de caminho (`\\` vs `/`), delimitador de PATH e compatibilidade de permissões em entregas, anexos, spawn, TLS e transcrição local Whisper."
+        ]
+      },
+      {
+        "title": "Limpeza",
+        "items": [
+          "**Remoção do código morto do modo visita:** removido o código legado do antigo modo de visita (`visitor.ts`, `SimMode.visit`, carteiras isoladas do mundo) do cliente de visualização."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-10-25",
+    "latest": false,
+    "sections": [
+      {
+        "title": "Novo",
+        "items": [
+          "**O escritório.** Cada projeto vira uma sala e cada sessão um personagem, que mostra ao vivo o que o agente está\n  fazendo, levanta a mão quando precisa de você e passeia quando termina. Gaveta de detalhes, terminal (`T`), Meu dia\n  (`M`), timelapse do dia e modo demonstração (`?mock=1`).",
+          "**Quatro ferramentas:** Claude Code (com o mod, `npm run mod:install`), Codex (`npm run codex:install`), Gemini CLI\n  (`npm run gemini:install`) e Antigravity (sem instalar nada). Cada conta mostra o logo da ferramenta.",
+          "**Responder e mandar mensagens pelo escritório** no Claude Code e no Codex.",
+          "**Nome e marca:** Karasudo, de _karasu_ (corvo): como os corvos que levam as notícias, ele mostra o que cada agente\n  está fazendo. O logo é o prédio em pixel art com um corvo pousado no telhado.",
+          "**100% local:** nada sai do computador. A única exceção é a consulta opcional de versão nova no GitHub\n  (`KARASUDO_UPDATE_CHECK=0` desliga).",
+          "**No Windows, o mesmo projeto cai sempre na mesma sala**, mesmo quando as ferramentas escrevem a pasta de jeitos\n  diferentes (`E:/proj`, `e:proj`)."
+        ]
+      }
+    ]
+  }
+]

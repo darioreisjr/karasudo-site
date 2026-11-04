@@ -1,0 +1,137 @@
+/* Estilos específicos de Pixel Art e componentes visuais do Karasudo */
+
+/* Renderização nítida de pixel art em qualquer resolução */
+.pixelated,
+img.pixel-art,
+canvas.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Caixa e painéis autênticos do Karasudo */
+.pixel-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.pixel-box--accent {
+  border-color: rgba(124, 200, 255, 0.4);
+}
+
+/* Botão autêntico de pixel/relevo tátil (sem glow genérico de IA) */
+.btn-pixel-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2b6cb0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid #4299e1;
+  border-bottom: 3px solid #1a365d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.08s var(--ease), background 0.1s var(--ease);
+  cursor: pointer;
+}
+
+.btn-pixel-primary:hover {
+  background: #3182ce;
+  border-color: #63b3ed;
+  transform: translateY(-1px);
+}
+
+.btn-pixel-primary:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+/* Botão secundário tátil */
+.btn-pixel-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 9px 16px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  border-bottom: 2px solid rgba(160, 176, 210, 0.35);
+  transition: background 0.12s var(--ease), border-color 0.12s var(--ease);
+  cursor: pointer;
+}
+
+.btn-pixel-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+}
+
+/* Keycaps físicos para atalhos de teclado (ex: P, T, M) */
+.ui-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 4px;
+  border: 1px solid var(--line-strong);
+  border-bottom: 2px solid rgba(160, 176, 210, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Indicadores de status dos agentes em pixel */
+.status-dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.status-dot--working { background-color: var(--status-working); box-shadow: 0 0 8px rgba(79, 209, 139, 0.6); }
+.status-dot--waiting { background-color: var(--status-waiting); box-shadow: 0 0 8px rgba(255, 181, 71, 0.6); }
+.status-dot--shell   { background-color: var(--status-shell);   box-shadow: 0 0 8px rgba(60, 216, 210, 0.6); }
+.status-dot--idle    { background-color: var(--status-idle); }
+.status-dot--done    { background-color: var(--status-done); }
+
+/* Badges e etiquetas em pixel */
+.badge-pixel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--line-subtle);
+  color: var(--text-muted);
+}
+
+.badge-pixel--latest {
+  background: rgba(79, 209, 139, 0.12);
+  border-color: rgba(79, 209, 139, 0.35);
+  color: var(--status-working);
+}
+
+.badge-pixel--privacy {
+  background: rgba(124, 200, 255, 0.12);
+  border-color: rgba(124, 200, 255, 0.3);
+  color: var(--accent);
+}

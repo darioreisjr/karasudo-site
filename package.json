@@ -1,0 +1,18 @@
+{
+  "name": "karasudo-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Site oficial e página de produto do Karasudo",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "audit": "node scripts/audit-layout.mjs",
+    "ai:sync": "node scripts/ai-sync.mjs",
+    "ai:check": "node scripts/ai-sync.mjs --check"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}

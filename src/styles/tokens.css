@@ -1,0 +1,59 @@
+/* Tokens de design do Karasudo Site */
+:root {
+  --bg-main: #0c0f17;
+  --bg-surface: rgba(18, 22, 32, 0.92);
+  --bg-surface-elevated: #161c28;
+  --bg-card: rgba(23, 29, 43, 0.85);
+  --bg-card-hover: rgba(30, 38, 56, 0.95);
+  
+  --line-subtle: rgba(160, 176, 210, 0.14);
+  --line-strong: rgba(160, 176, 210, 0.28);
+  --line-focus: #7cc8ff;
+
+  --text-main: #f0f4fc;
+  --text-muted: #9aa4b8;
+  --text-faint: #798399;
+
+  --accent: #7cc8ff;
+  --accent-soft: rgba(124, 200, 255, 0.14);
+  --accent-hover: #9ad5ff;
+
+  --status-working: #4fd18b;
+  --status-waiting: #ffb547;
+  --status-shell: #3cd8d2;
+  --status-idle: #8b98b3;
+  --status-done: #6aa8ff;
+
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  --font-pixel: 'Pixelify Sans', system-ui, sans-serif;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-pill: 9999px;
+
+  --container-max: 1120px;
+  --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Foco acessível global (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid var(--line-focus);
+  outline-offset: 3px;
+}
