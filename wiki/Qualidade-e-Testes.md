@@ -44,3 +44,9 @@ npm run build         # compilação de produção do Vite
 ```
 
 Se qualquer etapa falhar, o PR é bloqueado para merge até a correção.
+
+---
+
+## 4. Pipeline de Release em Produção
+
+Ao fazer o merge ou push na branch `main`, além do CI padrão, o workflow `.github/workflows/release.yml` executa a publicação automatizada de releases oficiais com tags anotadas no GitHub e notas extraídas do `CHANGELOG.md` (`npm run release -- --if-needed`).

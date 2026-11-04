@@ -65,7 +65,20 @@ Abre em **http://localhost:3000** com recarregamento instantâneo (HMR).
 | `npm run audit` | Executa a auditoria de layout, textos anti-slop e responsividade |
 | `npm run wiki:check` | Valida a integridade dos arquivos e links da pasta `wiki/` |
 | `npm run wiki:sync` | Sincroniza a documentação com o repositório remoto da GitHub Wiki |
+| `npm run release` | Publica a release oficial no GitHub a partir do `CHANGELOG.md` e `package.json` |
 | `npm run ai:check` | Confere a integridade das configurações dos agentes de IA |
+
+---
+
+## 🚀 Sistema Automatizado de Releases
+
+O repositório conta com pipeline contínuo de releases no GitHub Actions (`.github/workflows/release.yml`):
+
+1. A cada merge ou push na branch `main` (produção), o workflow de release entra em ação.
+2. Executa a bateria completa de validações: `npm run ai:check`, `npm run wiki:check`, `npm run audit` e `npm run build`.
+3. Executa `npm run release -- --if-needed`:
+   - Se houver uma nova versão no `package.json` documentada no `CHANGELOG.md`, cria a tag Git anotada `vX.Y.Z`, envia para o GitHub e cria a [Release oficial](https://github.com/darioreisjr/karasudo-site/releases) com as notas da versão.
+   - Se a tag já existir, o pipeline conclui de forma limpa e idempotente sem duplicidades.
 
 ---
 

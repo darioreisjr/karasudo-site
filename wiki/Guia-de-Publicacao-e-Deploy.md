@@ -56,3 +56,26 @@ Antes de enviar qualquer commit para produção:
 2. **Revisar a Wiki:** Conferir se as páginas em `wiki/` precisam de atualização.
 3. **Validar a Integridade da Wiki:** Rodar `npm run wiki:check` para garantir que nenhum link interno ou bloco mermaid esteja quebrado.
 4. **Executar a Auditoria:** Rodar `npm run audit` e `npm run build` para certificar-se de que nada quebrou a responsividade ou introduziu vícios de IA.
+
+---
+
+## 4. Sistema Automatizado de Releases
+
+Toda vez que alterações são integradas e enviadas para a branch `main`, o GitHub Actions executa o workflow `.github/workflows/release.yml`:
+
+```mermaid
+flowchart TD
+    A[Push / Merge na main] --> B[Checkout e Setup Node 22]
+    B --> C[npm ci]
+    C --> D[Testes e Auditoria: ai:check, wiki:check, audit, build]
+    D --> E{Nova versão no package.json?}
+    E -- Sim --> F[Extrai notas do CHANGELOG.md]
+    F --> G[Cria Tag Git vX.Y.Z]
+    G --> H[Publica GitHub Release oficial]
+    E -- Não / Tag já existe --> I[Conclui execução idempotente]
+```
+
+### Comandos de Release:
+- **`npm run release -- --dry-run`:** Simula o processo de release, validando se a versão está no `CHANGELOG.md` e exibindo as notas formatadas no terminal.
+- **`npm run release -- --if-needed`:** Usado no GitHub Actions; só publica se a versão do `package.json` ainda não tiver sido publicada.
+- **`npm run release`:** Publicação manual (requer autenticação via `gh cli`).
