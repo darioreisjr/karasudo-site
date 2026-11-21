@@ -63,7 +63,7 @@
               <p class="guide-step__desc">
                 Baixe o arquivo oficial pré-compilado (<strong>karasudo-0.1.8.tgz</strong> ou em formato <code>.zip</code>) em qualquer pasta do seu computador (por exemplo, na pasta <strong>Downloads</strong>):
               </p>
-              <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 10px;">
+              <div class="guide-step__actions">
                 <a href="/downloads/karasudo-0.1.8.tgz" class="btn-pixel-primary" download="karasudo-0.1.8.tgz">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                   <span>Baixar karasudo-0.1.8.tgz (2 MB)</span>
@@ -75,7 +75,7 @@
                   Central de Downloads
                 </a>
               </div>
-              <div class="guide-step__note" style="margin-top: 12px;">
+              <div class="guide-step__note">
                 <strong>Requisito único:</strong> Ter o Node.js instalado (versão 22.12 ou mais nova). Se ainda não tiver, baixe em <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a>. Não precisa de Git nem de ferramentas de compilação.
               </div>
             </article>
@@ -87,7 +87,7 @@
                 <h3 class="guide-step__title">Abra o Terminal e Instale</h3>
               </div>
               <p class="guide-step__desc">
-                Abra o Terminal (Prompt de Comando, PowerShell no Windows, ou Terminal no Mac/Linux) na pasta onde salvou o arquivo (ex.: na pasta <em>Downloads</em>) e digite:
+                Abra o Terminal (Prompt de Comando, PowerShell no Windows, ou Terminal no Mac/Linux) na pasta onde salvou o arquivo (ex.: na pasta Downloads) e digite:
               </p>
               <div class="command-snippet">
                 <code>npm install -g ./karasudo-0.1.8.tgz</code>
@@ -96,8 +96,8 @@
                   <svg class="icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4fd18b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </button>
               </div>
-              <div class="guide-step__note" style="margin-top: 8px;">
-                <em>Caso tenha baixado em <code>.zip</code>, descompacte o arquivo (você encontrará o <code>karasudo-0.1.8.tgz</code> dentro) e rode o comando acima na pasta.</em>
+              <div class="guide-step__note">
+                Caso tenha baixado em <code>.zip</code>, descompacte o arquivo (você encontrará o <code>karasudo-0.1.8.tgz</code> dentro) e rode o comando acima na pasta.
               </div>
             </article>
 
@@ -117,7 +117,7 @@
                   <svg class="icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4fd18b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </button>
               </div>
-              <div class="guide-step__note" style="margin-top: 8px;">
+              <div class="guide-step__note">
                 O servidor iniciará instantaneamente no terminal mostrando: <code>🏢 Karasudo em http://127.0.0.1:1818</code>.
               </div>
             </article>
@@ -131,26 +131,26 @@
               <p class="guide-step__desc">
                 Abra seu navegador favorito e acesse:
               </p>
-              <div style="background: var(--bg-surface-elevated); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-                <span style="font-family: var(--font-mono); font-size: 1.25rem; color: var(--accent); font-weight: 700;">
+              <div class="guide-step__url-box">
+                <span class="guide-step__url-text">
                   http://localhost:1818
                 </span>
                 <span class="badge-pixel badge-pixel--latest">Porta do escritório</span>
               </div>
-              <div class="guide-step__note" style="margin-top: 10px;">
+              <div class="guide-step__note">
                 <strong>Privacidade total:</strong> Roda 100% local no seu computador, nada é enviado para a nuvem ou servidores externos. O Karasudo detecta sozinho as ferramentas que você estiver usando (Claude Code, Codex, Gemini e Antigravity) e mostra as salas e sessões em tempo real!
               </div>
             </article>
 
-            <!-- Dica Diária: Como Fechar e Reabrir -->
+            <!-- Passo 5: Como Fechar e Reabrir -->
             <article class="guide-step pixel-box">
               <div class="guide-step__head">
-                <span class="guide-step__badge">★</span>
+                <span class="guide-step__badge">5</span>
                 <h3 class="guide-step__title">No Dia a Dia: Como Fechar e Reabrir</h3>
               </div>
               <p class="guide-step__desc">
                 • <strong>Para fechar:</strong> Vá até o terminal e pressione <kbd class="ui-kbd">Ctrl</kbd> + <kbd class="ui-kbd">C</kbd>.<br />
-                • <strong>Para abrir de novo:</strong> Você <em>não precisa</em> baixar nem reinstalar nada! Basta abrir qualquer terminal e digitar diretamente:
+                • <strong>Para abrir de novo:</strong> Você não precisa baixar nem reinstalar nada! Basta abrir qualquer terminal e digitar diretamente:
               </p>
               <div class="command-snippet">
                 <code>karasudo</code>
@@ -177,7 +177,6 @@
           <div class="tools-grid">
             <article class="tool-card pixel-box">
               <div class="tool-card__body">
-                <span class="tool-card__badge">CLAUDE CODE</span>
                 <h3 class="tool-card__title">Claude Code</h3>
                 <p class="tool-card__desc">
                   Instala o mod oficial do Karasudo para atualização em tempo real e resposta pelo escritório. Requer Claude Code 2.1.287+.
@@ -197,7 +196,6 @@
 
             <article class="tool-card pixel-box">
               <div class="tool-card__body">
-                <span class="tool-card__badge">CODEX</span>
                 <h3 class="tool-card__title">Codex</h3>
                 <p class="tool-card__desc">
                   Instala os hooks de eventos. Depois de instalar, abra o Codex, digite <code>/hooks</code> e aprove os hooks do Karasudo.
@@ -217,7 +215,6 @@
 
             <article class="tool-card pixel-box">
               <div class="tool-card__body">
-                <span class="tool-card__badge">GEMINI CLI</span>
                 <h3 class="tool-card__title">Gemini CLI</h3>
                 <p class="tool-card__desc">
                   Ativa a integração com as sessões do Gemini CLI. É necessário estar logado com sua conta Google no terminal.
@@ -237,7 +234,6 @@
 
             <article class="tool-card pixel-box">
               <div class="tool-card__body">
-                <span class="tool-card__badge">ANTIGRAVITY</span>
                 <h3 class="tool-card__title">Antigravity</h3>
                 <p class="tool-card__desc">
                   O Karasudo monitora automaticamente o diretório <code>~/.gemini/antigravity</code> e cria as salas dos projetos sem nenhuma configuração manual.
@@ -245,7 +241,7 @@
               </div>
               <div class="tool-card__action">
                 <span class="tool-command-label">Instalação:</span>
-                <div class="badge-pixel badge-pixel--latest" style="width: 100%; justify-content: center; padding: 7px 10px;">
+                <div class="badge-pixel badge-pixel--latest tool-card__instant">
                   Detecção automática instantânea
                 </div>
               </div>
@@ -333,7 +329,7 @@
       </section>
 
       <!-- LEGENDA DOS PERSONAGENS -->
-      <section class="features-section" style="padding-bottom: 70px;">
+      <section class="features-section features-section--legend">
         <div class="container">
           <div class="section-head">
             <h2 class="section-head__title">Significado dos Personagens no Escritório</h2>
@@ -368,10 +364,10 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          <strong>Karasudo</strong> criado por <a href="https://github.com/darioreisjr" target="_blank" rel="noopener noreferrer">darioreisjr</a> <span class="current-year">2026</span>.
+          <strong>Karasudo</strong> — criado por <a href="https://github.com/darioreisjr" target="_blank" rel="noopener noreferrer">darioreisjr</a> <span class="current-year">2026</span>.
         </p>
         <p>
-          Inspirado em <em>karasu</em> (corvo) e <em>dō</em> (casa). 100% livre e de código aberto.
+          Inspirado em karasu (corvo) e dō (casa). 100% livre e de código aberto.
         </p>
       </div>
     </footer>
