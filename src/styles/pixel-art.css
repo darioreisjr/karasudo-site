@@ -27,23 +27,23 @@ canvas.pixel-art {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #2b6cb0;
+  background: var(--btn-primary-bg);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.98rem;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: var(--radius-sm);
-  border: 1px solid #4299e1;
-  border-bottom: 3px solid #1a365d;
+  border: 1px solid var(--btn-primary-border);
+  border-bottom: 3px solid var(--btn-primary-shadow);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.08s var(--ease), background 0.1s var(--ease);
   cursor: pointer;
 }
 
 .btn-pixel-primary:hover {
-  background: #3182ce;
-  border-color: #63b3ed;
+  background: var(--btn-primary-bg-hover);
+  border-color: var(--btn-primary-border-hover);
   transform: translateY(-1px);
 }
 

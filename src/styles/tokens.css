@@ -18,6 +18,13 @@
   --accent-soft: rgba(124, 200, 255, 0.14);
   --accent-hover: #9ad5ff;
 
+  /* Botão primário tátil (relevo mecânico) */
+  --btn-primary-bg: #2b6cb0;
+  --btn-primary-bg-hover: #3182ce;
+  --btn-primary-border: #4299e1;
+  --btn-primary-border-hover: #63b3ed;
+  --btn-primary-shadow: #1a365d;
+
   --status-working: #4fd18b;
   --status-waiting: #ffb547;
   --status-shell: #3cd8d2;
