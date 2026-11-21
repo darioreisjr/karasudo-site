@@ -104,9 +104,9 @@ canvas.pixel-art {
   border-radius: 2px;
 }
 
-.status-dot--working { background-color: var(--status-working); box-shadow: 0 0 8px rgba(79, 209, 139, 0.6); }
-.status-dot--waiting { background-color: var(--status-waiting); box-shadow: 0 0 8px rgba(255, 181, 71, 0.6); }
-.status-dot--shell   { background-color: var(--status-shell);   box-shadow: 0 0 8px rgba(60, 216, 210, 0.6); }
+.status-dot--working { background-color: var(--status-working); }
+.status-dot--waiting { background-color: var(--status-waiting); }
+.status-dot--shell   { background-color: var(--status-shell); }
 .status-dot--idle    { background-color: var(--status-idle); }
 .status-dot--done    { background-color: var(--status-done); }
 
