@@ -391,6 +391,47 @@ a:hover {
   flex-shrink: 0;
 }
 
+/* Micro-preview interativo de atalhos do escritório */
+.pixel-interaction-preview {
+  background: #06080d;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.pip-character {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pip-bubble {
+  color: var(--status-waiting);
+  background: rgba(255, 181, 71, 0.1);
+  border: 1px solid rgba(255, 181, 71, 0.25);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+}
+
+.pip-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+}
+
+.pip-reply {
+  color: var(--accent);
+}
+
 /* Seção Central de Downloads */
 .downloads {
   padding: 60px 0;
