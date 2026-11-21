@@ -47,8 +47,7 @@ function renderReleases() {
         ? `
           <a
             href="${rel.downloads.tgz}"
-            class="btn-pixel-secondary"
-            style="padding: 4px 10px; font-size: 0.8rem;"
+            class="btn-pixel-secondary btn-pixel-compact"
             download="karasudo-${rel.version}.tgz"
             onclick="event.stopPropagation();"
           >
@@ -56,15 +55,14 @@ function renderReleases() {
           </a>
           <a
             href="${rel.downloads.zip}"
-            class="btn-pixel-secondary"
-            style="padding: 4px 10px; font-size: 0.8rem;"
+            class="btn-pixel-secondary btn-pixel-compact"
             download="karasudo-${rel.version}.zip"
             onclick="event.stopPropagation();"
           >
             .ZIP (2 MB)
           </a>
         `
-        : `<span style="font-size: 0.78rem; color: var(--text-faint);">Notas históricas</span>`;
+        : `<span class="version-item__historical-note">Notas históricas</span>`;
 
       return `
         <details class="version-item" ${isOpen}>
