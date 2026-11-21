@@ -9,6 +9,17 @@ do meio (0.**2**.0).
 
 ## [Não lançado]
 
+## [0.1.1] - 2026-11-21
+
+### Modificado
+
+- **Refinamento Visual Completo (Metodologia Unslop):** eliminação cirúrgica de vícios e sinais residuais de IA em todas as telas (`index.html`, `como-usar.html` e `downloads.html`), garantindo estética limpa, tátil e com forte personalidade de produto.
+- **Design Tokens para Botões Primários:** criação de tokens semânticos dedicados (`--btn-primary-bg`, `--btn-primary-border`, `--btn-primary-shadow`) eliminando valores hexadecimais dispersos e unificando o design system.
+- **Nitidez Geométrica de Pixel Art:** remoção de desfoques gaussianos difusos (`box-shadow: 0 0 8px...`) em `.status-dot`, restaurando a autenticidade dos indicadores quadrados em pixel art.
+- **Micro-preview de Atalhos em Código:** adição de componente tátil ilustrando visualmente o atalho <kbd class="ui-kbd">P</kbd> e a resposta instantânea pelo escritório.
+- **Padronização dos Botões de Cópia:** unificação do botão de cópia rápida do Docker na central de downloads para o formato icon-only (`.btn-copy-icon`), otimizando o espaço horizontal.
+- **Eliminação Total de Estilos Inline:** migração completa de estilos manuais para classes utilitárias estritas no grid de 4px (`.guide-step__actions`, `.guide-step__url-box`, `.requirements-list`, `.btn-pixel-compact`).
+
 ## [0.1.0] - 2026-11-04
 
 ### Adicionado
